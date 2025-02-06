@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import random
 
 app = FastAPI()
- 
+
 try:
     with open("student_marks.json", "r") as marks_file:
         student_data = json.load(marks_file)
