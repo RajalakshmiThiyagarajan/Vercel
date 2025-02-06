@@ -7,7 +7,7 @@ import random
 app = FastAPI()
 
 try:
-    with open("../students_marks.json", "r") as marks_file:
+    with open("students_marks.json", "r") as marks_file:
         student_data = json.load(marks_file)
         student_marks: Dict[str, int] = {}
         for student in student_data:
