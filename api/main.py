@@ -7,7 +7,7 @@ import random
 app = FastAPI()
 
 try:
-    with open("student_marks.json", "r") as marks_file:
+    with open("../students_marks.json", "r") as marks_file:
         student_data = json.load(marks_file)
         student_marks: Dict[str, int] = {}
         for student in student_data:
@@ -23,7 +23,7 @@ except FileNotFoundError:
     student_marks: Dict[str, int] = {
         f"Student_{i+1}": random.randint(0, 100) for i in range(100)
     }
-    with open("student_marks.json", "w") as marks_file:
+    with open("../student_marks.json", "w") as marks_file:
         json.dump(student_marks, marks_file, indent=4)
     print("Generated dummy student_marks:", student_marks) # Print the generated dictionary
 
